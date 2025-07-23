@@ -1,9 +1,9 @@
-import React, { useState } from 'react';
-import { motion } from 'framer-motion';
-import { 
-  Phone, 
-  Mail, 
-  MapPin, 
+import React, { useState } from "react";
+import { motion } from "framer-motion";
+import {
+  Phone,
+  Mail,
+  MapPin,
   Clock,
   Send,
   AlertCircle,
@@ -11,15 +11,15 @@ import {
   Building2,
   MessageCircle,
   User,
-  CheckCircle
-} from 'lucide-react';
+  CheckCircle,
+} from "lucide-react";
 
 const Contact = () => {
   const [formData, setFormData] = useState({
-    name: '',
-    email: '',
-    subject: '',
-    message: ''
+    name: "",
+    email: "",
+    subject: "",
+    message: "",
   });
   const [isSubmitted, setIsSubmitted] = useState(false);
 
@@ -30,10 +30,12 @@ const Contact = () => {
     setTimeout(() => setIsSubmitted(false), 3000);
   };
 
-  const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>) => {
+  const handleChange = (
+    e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement>
+  ) => {
     setFormData({
       ...formData,
-      [e.target.name]: e.target.value
+      [e.target.name]: e.target.value,
     });
   };
 
@@ -45,8 +47,8 @@ const Contact = () => {
         "Kakinada Seaports Ltd",
         "Kakinada Port",
         "East Godavari District",
-        "Andhra Pradesh, India"
-      ]
+        "Andhra Pradesh, India",
+      ],
     },
     {
       icon: Building2,
@@ -55,9 +57,9 @@ const Contact = () => {
         "Kakinada Seaports Ltd",
         "Corporate Office",
         "Hyderabad, Telangana",
-        "India - 500001"
-      ]
-    }
+        "India - 500001",
+      ],
+    },
   ];
 
   const emergencyContacts = [
@@ -65,26 +67,26 @@ const Contact = () => {
       icon: Shield,
       service: "Port Security",
       number: "+91 884 238 5001",
-      available: "24/7"
+      available: "24/7",
     },
     {
       icon: AlertCircle,
       service: "Emergency Fire",
-      number: "+91 884 238 5002", 
-      available: "24/7"
+      number: "+91 884 238 5002",
+      available: "24/7",
     },
     {
       icon: Phone,
       service: "Medical Emergency",
       number: "+91 884 238 5003",
-      available: "24/7"
+      available: "24/7",
     },
     {
       icon: MessageCircle,
       service: "Grievance Redressal",
       number: "+91 884 238 5004",
-      available: "Business Hours"
-    }
+      available: "Business Hours",
+    },
   ];
 
   const businessContacts = [
@@ -92,26 +94,26 @@ const Contact = () => {
       icon: Phone,
       type: "Main Office",
       value: "+91 884 238 5000",
-      description: "General inquiries and business"
+      description: "General inquiries and business",
     },
     {
       icon: Mail,
       type: "Email",
       value: "info@kakinadaseaports.com",
-      description: "Business communications"
+      description: "Business communications",
     },
     {
       icon: Phone,
       type: "Operations",
       value: "+91 884 238 5010",
-      description: "Port operations and logistics"
+      description: "Port operations and logistics",
     },
     {
       icon: Mail,
       type: "Commercial",
       value: "commercial@kakinadaseaports.com",
-      description: "Commercial and sales inquiries"
-    }
+      description: "Commercial and sales inquiries",
+    },
   ];
 
   return (
@@ -128,7 +130,7 @@ const Contact = () => {
             <Phone className="h-16 w-16 mx-auto mb-6 text-sky-300" />
             <h1 className="text-5xl md:text-6xl font-bold mb-6">Contact Us</h1>
             <p className="text-xl text-blue-200 max-w-3xl mx-auto">
-              Get in touch with our maritime experts for all your port services, 
+              Get in touch with our maritime experts for all your port services,
               logistics, and business inquiries
             </p>
           </motion.div>
@@ -146,7 +148,9 @@ const Contact = () => {
               transition={{ duration: 0.6 }}
               viewport={{ once: true }}
             >
-              <h2 className="text-3xl font-bold text-gray-900 mb-8">Send us a Message</h2>
+              <h2 className="text-3xl font-bold text-gray-900 mb-8">
+                Send us a Message
+              </h2>
               <form onSubmit={handleSubmit} className="space-y-6">
                 <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
                   <div>
@@ -217,9 +221,9 @@ const Contact = () => {
                   whileHover={{ scale: 1.02 }}
                   whileTap={{ scale: 0.98 }}
                   className={`w-full px-6 py-3 rounded-lg font-semibold transition-all duration-300 flex items-center justify-center space-x-2 ${
-                    isSubmitted 
-                      ? 'bg-green-600 text-white'
-                      : 'bg-blue-600 text-white hover:bg-blue-700'
+                    isSubmitted
+                      ? "bg-green-600 text-white"
+                      : "bg-blue-600 text-white hover:bg-blue-700"
                   }`}
                 >
                   {isSubmitted ? (
@@ -246,19 +250,30 @@ const Contact = () => {
               className="space-y-8"
             >
               <div>
-                <h2 className="text-3xl font-bold text-gray-900 mb-8">Get in Touch</h2>
-                
+                <h2 className="text-3xl font-bold text-gray-900 mb-8">
+                  Get in Touch
+                </h2>
+
                 {/* Business Contacts */}
                 <div className="space-y-4 mb-8">
                   {businessContacts.map((contact, index) => (
-                    <div key={index} className="flex items-start space-x-4 p-4 bg-blue-50 rounded-lg">
+                    <div
+                      key={index}
+                      className="flex items-start space-x-4 p-4 bg-blue-50 rounded-lg"
+                    >
                       <div className="w-10 h-10 bg-blue-600 rounded-lg flex items-center justify-center flex-shrink-0">
                         <contact.icon className="h-5 w-5 text-white" />
                       </div>
                       <div>
-                        <h3 className="font-semibold text-gray-900">{contact.type}</h3>
-                        <p className="text-blue-600 font-medium">{contact.value}</p>
-                        <p className="text-sm text-gray-600">{contact.description}</p>
+                        <h3 className="font-semibold text-gray-900">
+                          {contact.type}
+                        </h3>
+                        <p className="text-blue-600 font-medium">
+                          {contact.value}
+                        </p>
+                        <p className="text-sm text-gray-600">
+                          {contact.description}
+                        </p>
                       </div>
                     </div>
                   ))}
@@ -277,7 +292,9 @@ const Contact = () => {
                     </div>
                     <div className="flex justify-between">
                       <span>Office Hours:</span>
-                      <span className="font-medium">Mon-Sat 9:00 AM - 6:00 PM</span>
+                      <span className="font-medium">
+                        Mon-Sat 9:00 AM - 6:00 PM
+                      </span>
                     </div>
                     <div className="flex justify-between">
                       <span>Emergency Services:</span>
@@ -302,7 +319,9 @@ const Contact = () => {
             className="text-center mb-12"
           >
             <MapPin className="h-12 w-12 mx-auto mb-4 text-blue-600" />
-            <h2 className="text-4xl font-bold text-gray-900 mb-4">Our Locations</h2>
+            <h2 className="text-4xl font-bold text-gray-900 mb-4">
+              Our Locations
+            </h2>
           </motion.div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 gap-8 mb-12">
@@ -317,11 +336,15 @@ const Contact = () => {
               >
                 <div className="flex items-center space-x-3 mb-4">
                   <info.icon className="h-8 w-8 text-blue-600" />
-                  <h3 className="text-xl font-bold text-gray-900">{info.title}</h3>
+                  <h3 className="text-xl font-bold text-gray-900">
+                    {info.title}
+                  </h3>
                 </div>
                 <div className="space-y-1">
                   {info.details.map((detail, detailIndex) => (
-                    <p key={detailIndex} className="text-gray-700">{detail}</p>
+                    <p key={detailIndex} className="text-gray-700">
+                      {detail}
+                    </p>
                   ))}
                 </div>
               </motion.div>
@@ -336,13 +359,15 @@ const Contact = () => {
             viewport={{ once: true }}
             className="bg-white rounded-2xl shadow-lg p-6"
           >
-            <h3 className="text-xl font-bold text-gray-900 mb-4">Port Location</h3>
+            <h3 className="text-xl font-bold text-gray-900 mb-4">
+              Port Location
+            </h3>
             <div className="aspect-video bg-gradient-to-br from-blue-100 to-sky-100 rounded-xl flex items-center justify-center">
-              <div className="text-center">
-                <MapPin className="h-16 w-16 text-blue-600 mx-auto mb-4" />
-                <p className="text-gray-700 font-medium">Interactive Map</p>
-                <p className="text-sm text-gray-500">Kakinada Port, East Godavari District</p>
-              </div>
+              <iframe
+                src="https://www.google.com/maps/embed?pb=!1m13!1m8!1m3!1d10048.835995531874!2d82.27992124732148!3d16.974724652721132!3m2!1i1024!2i768!4f13.1!3m2!1m1!2zMTbCsDU4JzMwLjAiTiA4MsKwMTYnNDQuNCJF!5e0!3m2!1sen!2sin!4v1753233104919!5m2!1sen!2sin"
+                className="w-full h-full rounded-lg"
+                loading="lazy"
+              ></iframe>
             </div>
           </motion.div>
         </div>
@@ -359,8 +384,12 @@ const Contact = () => {
             className="text-center mb-12"
           >
             <AlertCircle className="h-12 w-12 mx-auto mb-4 text-red-600" />
-            <h2 className="text-4xl font-bold text-gray-900 mb-4">Emergency Contacts</h2>
-            <p className="text-xl text-gray-600">24/7 emergency services for immediate assistance</p>
+            <h2 className="text-4xl font-bold text-gray-900 mb-4">
+              Emergency Contacts
+            </h2>
+            <p className="text-xl text-gray-600">
+              24/7 emergency services for immediate assistance
+            </p>
           </motion.div>
 
           <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
@@ -376,8 +405,12 @@ const Contact = () => {
                 <div className="w-12 h-12 bg-red-100 rounded-full flex items-center justify-center mx-auto mb-4">
                   <contact.icon className="h-6 w-6 text-red-600" />
                 </div>
-                <h3 className="font-bold text-gray-900 mb-2">{contact.service}</h3>
-                <p className="text-red-600 font-mono font-semibold text-lg mb-1">{contact.number}</p>
+                <h3 className="font-bold text-gray-900 mb-2">
+                  {contact.service}
+                </h3>
+                <p className="text-red-600 font-mono font-semibold text-lg mb-1">
+                  {contact.number}
+                </p>
                 <p className="text-sm text-gray-500">{contact.available}</p>
               </motion.div>
             ))}

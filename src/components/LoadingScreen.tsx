@@ -24,20 +24,7 @@ const LoadingScreen = () => {
           }}
         >
           <Anchor className="h-16 w-16 text-white mx-auto" />
-          <motion.div
-            className="absolute -bottom-2 -left-4"
-            animate={{ 
-              x: [0, 10, -10, 0],
-              opacity: [0.3, 0.8, 0.3]
-            }}
-            transition={{ 
-              duration: 3,
-              repeat: Infinity,
-              ease: "easeInOut"
-            }}
-          >
-            <Waves className="h-8 w-8 text-sky-300" />
-          </motion.div>
+     
         </motion.div>
         
         <motion.h1

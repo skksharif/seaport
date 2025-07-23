@@ -1,17 +1,17 @@
-import React, { useState, useEffect } from 'react';
-import { motion, AnimatePresence } from 'framer-motion';
-import { useNavigate } from 'react-router-dom';
-import { 
-  ChevronLeft, 
-  ChevronRight, 
-  Play, 
+import React, { useState, useEffect } from "react";
+import { motion, AnimatePresence } from "framer-motion";
+import { useNavigate } from "react-router-dom";
+import {
+  ChevronLeft,
+  ChevronRight,
+  Play,
   ArrowRight,
   Anchor,
   Ship,
   Camera,
   Phone,
-  Briefcase
-} from 'lucide-react';
+  Briefcase,
+} from "lucide-react";
 
 const HeroSlideshow = () => {
   const [currentSlide, setCurrentSlide] = useState(0);
@@ -23,57 +23,68 @@ const HeroSlideshow = () => {
       id: 1,
       title: "Welcome to Kakinada Seaports",
       subtitle: "India's Gateway to Maritime Excellence",
-      description: "Strategically positioned between Vizag and Chennai, we provide world-class port services with state-of-the-art infrastructure.",
+      description:
+        "Strategically positioned between Vizag and Chennai, we provide world-class port services with state-of-the-art infrastructure.",
       buttonText: "Explore Our Services",
-      action: () => navigate('/services'),
+      action: () => navigate("/services"),
       icon: Anchor,
-      background: "linear-gradient(135deg, #1e40af 0%, #3b82f6 50%, #60a5fa 100%)",
-      image: "https://images.pexels.com/photos/906982/pexels-photo-906982.jpeg"
+      background:
+        "linear-gradient(135deg, #1e40af 0%, #3b82f6 50%, #60a5fa 100%)",
+      image: "https://images.pexels.com/photos/906982/pexels-photo-906982.jpeg",
     },
     {
       id: 2,
       title: "Port Information",
       subtitle: "Advanced Maritime Infrastructure",
-      description: "Discover our comprehensive port facilities including 7 berths at Main Jetty, OSV operations, and NRW extensions.",
+      description:
+        "Discover our comprehensive port facilities including 7 berths at Main Jetty, OSV operations, and NRW extensions.",
       buttonText: "View Port Details",
-      action: () => navigate('/port-info'),
+      action: () => navigate("/port-info"),
       icon: Ship,
-      background: "linear-gradient(135deg, #0c4a6e 0%, #0369a1 50%, #0284c7 100%)",
-      image: "https://images.pexels.com/photos/2144326/pexels-photo-2144326.jpeg"
+      background:
+        "linear-gradient(135deg, #0c4a6e 0%, #0369a1 50%, #0284c7 100%)",
+      image: "./port/port2.jpg",
     },
     {
       id: 3,
       title: "Our Work",
       subtitle: "Strategic Operations & Global Reach",
-      description: "From SEZ operations to global exports of agri products, granite, and minerals through our advanced logistics network.",
+      description:
+        "From SEZ operations to global exports of agri products, granite, and minerals through our advanced logistics network.",
       buttonText: "See Our Work",
-      action: () => navigate('/our-work'),
+      action: () => navigate("/our-work"),
       icon: Briefcase,
-      background: "linear-gradient(135deg, #164e63 0%, #0891b2 50%, #06b6d4 100%)",
-      image: "https://images.pexels.com/photos/1117210/pexels-photo-1117210.jpeg"
+      background:
+        "linear-gradient(135deg, #164e63 0%, #0891b2 50%, #06b6d4 100%)",
+      image: "./port/workers.jpg",
     },
     {
       id: 4,
       title: "Gallery",
       subtitle: "Visual Journey Through Our Operations",
-      description: "Explore our state-of-the-art facilities, operations, and the maritime excellence that defines Kakinada Seaports.",
+      description:
+        "Explore our state-of-the-art facilities, operations, and the maritime excellence that defines Kakinada Seaports.",
       buttonText: "View Gallery",
-      action: () => navigate('/gallery'),
+      action: () => navigate("/gallery"),
       icon: Camera,
-      background: "linear-gradient(135deg, #1e3a8a 0%, #3730a3 50%, #4f46e5 100%)",
-      image: "https://images.pexels.com/photos/1108101/pexels-photo-1108101.jpeg"
+      background:
+        "linear-gradient(135deg, #1e3a8a 0%, #3730a3 50%, #4f46e5 100%)",
+      image: "./port/port1.jpg",
     },
     {
       id: 5,
       title: "Contact Us",
       subtitle: "Connect With Maritime Experts",
-      description: "Ready to discuss your maritime needs? Our team is available 24/7 to provide exceptional port services and support.",
+      description:
+        "Ready to discuss your maritime needs? Our team is available 24/7 to provide exceptional port services and support.",
       buttonText: "Get In Touch",
-      action: () => navigate('/contact'),
+      action: () => navigate("/contact"),
       icon: Phone,
-      background: "linear-gradient(135deg, #075985 0%, #0284c7 50%, #0ea5e9 100%)",
-      image: "https://images.pexels.com/photos/163726/belgium-antwerp-shipping-container-163726.jpeg"
-    }
+      background:
+        "linear-gradient(135deg, #075985 0%, #0284c7 50%, #0ea5e9 100%)",
+      image:
+        "https://images.pexels.com/photos/163726/belgium-antwerp-shipping-container-163726.jpeg",
+    },
   ];
 
   useEffect(() => {
@@ -108,7 +119,7 @@ const HeroSlideshow = () => {
           key={currentSlide}
           className="absolute inset-0 bg-cover bg-center"
           style={{
-            backgroundImage: `url(${slides[currentSlide].image})`
+            backgroundImage: `url(${slides[currentSlide].image})`,
           }}
           initial={{ scale: 1.1, opacity: 0 }}
           animate={{ scale: 1, opacity: 1 }}
@@ -116,11 +127,14 @@ const HeroSlideshow = () => {
           transition={{ duration: 1 }}
         >
           {/* Overlay */}
-          <div 
+          <div
             className="absolute inset-0"
-            style={{ background: slides[currentSlide].background, opacity: 0.8 }}
+            style={{
+              background: slides[currentSlide].background,
+              opacity: 0.8,
+            }}
           />
-          
+
           {/* Content */}
           <div className="relative z-10 h-full flex items-center justify-center">
             <div className="max-w-4xl mx-auto text-center text-white px-4">
@@ -132,7 +146,7 @@ const HeroSlideshow = () => {
               >
                 <IconComponent className="h-16 w-16 mx-auto mb-4 text-sky-300" />
               </motion.div>
-              
+
               <motion.h1
                 className="text-5xl md:text-7xl font-bold mb-4"
                 initial={{ y: 30, opacity: 0 }}
@@ -141,7 +155,7 @@ const HeroSlideshow = () => {
               >
                 {slides[currentSlide].title}
               </motion.h1>
-              
+
               <motion.h2
                 className="text-2xl md:text-3xl font-light mb-6 text-sky-200"
                 initial={{ y: 30, opacity: 0 }}
@@ -150,7 +164,7 @@ const HeroSlideshow = () => {
               >
                 {slides[currentSlide].subtitle}
               </motion.h2>
-              
+
               <motion.p
                 className="text-lg md:text-xl mb-8 max-w-2xl mx-auto leading-relaxed"
                 initial={{ y: 30, opacity: 0 }}
@@ -159,10 +173,10 @@ const HeroSlideshow = () => {
               >
                 {slides[currentSlide].description}
               </motion.p>
-              
+
               <motion.button
                 onClick={slides[currentSlide].action}
-                className="inline-flex items-center space-x-2 bg-white text-blue-900 px-8 py-4 rounded-full text-lg font-semibold hover:bg-sky-100 transition-all duration-300 shadow-lg hover:shadow-xl transform hover:scale-105"
+                className="inline-flex items-center space-x-2 bg-white text-blue-900 px-8 py-4 rounded-full text-lg font-semibold hover:bg-sky-100 cursor-pointer"
                 initial={{ y: 30, opacity: 0 }}
                 animate={{ y: 0, opacity: 1 }}
                 transition={{ duration: 0.8, delay: 0.6 }}
@@ -177,19 +191,25 @@ const HeroSlideshow = () => {
         </motion.div>
       </AnimatePresence>
 
-      {/* Navigation Controls */}
-      <div className="absolute inset-0 z-20 flex items-center justify-between px-4">
+      {/* Navigation Controls (Fix layering) */}
+      <div className="absolute inset-0 z-50 flex items-center justify-between px-4 pointer-events-none">
         <motion.button
-          onClick={prevSlide}
-          className="p-3 bg-white/20 backdrop-blur-sm rounded-full text-white hover:bg-white/30 transition-all"
+          onClick={(e) => {
+            e.stopPropagation();
+            prevSlide();
+          }}
+          className="p-3 bg-white/20 backdrop-blur-sm rounded-full text-white hover:bg-white/30 transition-all pointer-events-auto"
           whileHover={{ scale: 1.1 }}
           whileTap={{ scale: 0.9 }}
         >
           <ChevronLeft className="h-6 w-6" />
         </motion.button>
         <motion.button
-          onClick={nextSlide}
-          className="p-3 bg-white/20 backdrop-blur-sm rounded-full text-white hover:bg-white/30 transition-all"
+          onClick={(e) => {
+            e.stopPropagation();
+            nextSlide();
+          }}
+          className="p-3 bg-white/20 backdrop-blur-sm rounded-full text-white hover:bg-white/30 transition-all pointer-events-auto"
           whileHover={{ scale: 1.1 }}
           whileTap={{ scale: 0.9 }}
         >
@@ -206,8 +226,8 @@ const HeroSlideshow = () => {
               onClick={() => goToSlide(index)}
               className={`w-3 h-3 rounded-full transition-all duration-300 ${
                 index === currentSlide
-                  ? 'bg-white scale-125'
-                  : 'bg-white/50 hover:bg-white/75'
+                  ? "bg-white scale-125"
+                  : "bg-white/50 hover:bg-white/75"
               }`}
             />
           ))}
@@ -215,16 +235,16 @@ const HeroSlideshow = () => {
       </div>
 
       {/* Auto-play control */}
-      <div className="absolute top-6 right-6 z-20">
+      <div className="absolute top-6 right-6">
         <button
           onClick={() => setIsAutoPlay(!isAutoPlay)}
           className={`p-2 rounded-full backdrop-blur-sm transition-all ${
-            isAutoPlay 
-              ? 'bg-white/20 text-white hover:bg-white/30' 
-              : 'bg-white/40 text-white/70 hover:bg-white/50'
+            isAutoPlay
+              ? "bg-white/20 text-white hover:bg-white/30"
+              : "bg-white/40 text-white/70 hover:bg-white/50"
           }`}
         >
-          <Play className={`h-4 w-4 ${!isAutoPlay && 'opacity-50'}`} />
+          <Play className={`h-4 w-4 ${!isAutoPlay && "opacity-50"}`} />
         </button>
       </div>
     </div>

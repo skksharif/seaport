@@ -70,14 +70,13 @@ const Navigation = () => {
         <div className="flex items-center justify-between h-16">
           {/* Logo */}
           <Link to="/" className="flex items-center space-x-2">
-            <motion.div
-              whileHover={{ rotate: 15 }}
-              transition={{ duration: 0.2 }}
-            >
-              <Anchor className="h-8 w-8 text-blue-600" />
-            </motion.div>
+            <img
+              src="/logo.png"
+              alt="Kakinada Sea Ports Logo"
+              className="h-[60px] w-auto"
+            />
             <span className="text-xl font-bold text-blue-900">
-              Kakinada Seaports
+              Kakinada Sea Ports
             </span>
           </Link>
 

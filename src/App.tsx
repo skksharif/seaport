@@ -13,6 +13,7 @@ import News from './pages/News';
 import Contact from './pages/Contact';
 import LoadingScreen from './components/LoadingScreen';
 import { useState, useEffect } from 'react';
+import ScrollToTop from './components/ScrollToTop';
 
 function App() {
   const [isLoading, setIsLoading] = useState(true);
@@ -31,6 +32,7 @@ function App() {
 
   return (
     <Router>
+      <ScrollToTop />
       <Layout>
         <Routes>
           <Route path="/" element={<Home />} />
